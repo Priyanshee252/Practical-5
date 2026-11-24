@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>CityCare Hospital - Patient Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>CityCare Hospital</h1>
+      <p>New patient registration</p>
+    </header>
+
+    <div id="success" class="success" role="status" hidden></div>
+
+    <form id="registration-form" novalidate>
+      <fieldset>
+        <legend>Personal details</legend>
+
+        <div class="field">
+          <label for="fullName">Full name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g. Aarav Sharma" maxlength="50" minlength="2" autocomplete="name" required>
+          <small class="error" id="fullName-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="dob">Date of birth *</label>
+          <input type="date" id="dob" name="dob" required>
+          <small class="error" id="dob-error"></small>
+        </div>
+
+        <div class="field">
+          <span class="label">Gender *</span>
+          <div class="options">
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+          </div>
+          <small class="error" id="gender-error"></small>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Contact details</legend>
+
+        <div class="field">
+          <label for="email">Email address *</label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" maxlength="80" autocomplete="email" required>
+          <small class="error" id="email-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="mobile">Mobile number *</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="10-digit number" maxlength="10" inputmode="numeric" autocomplete="tel" required>
+          <small class="error" id="mobile-error"></small>
+        </div>
+
+        <div class="field">
+          <span class="label">Preferred contact (optional)</span>
+          <div class="options">
+            <label><input type="checkbox" name="contact" value="SMS"> SMS</label>
+            <label><input type="checkbox" name="contact" value="Email"> Email</label>
+            <label><input type="checkbox" name="contact" value="Phone call"> Phone call</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Appointment and documents</legend>
+
+        <div class="field">
+          <label for="department">Department *</label>
+          <select id="department" name="department" required>
+            <option value="">Select a department</option>
+            <option>General Medicine</option>
+            <option>Cardiology</option>
+            <option>Orthopedics</option>
+            <option>Pediatrics</option>
+            <option>Dermatology</option>
+          </select>
+          <small class="error" id="department-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="idProof">ID proof (PDF, JPG or PNG, max 2 MB) *</label>
+          <input type="file" id="idProof" name="idProof" accept=".pdf,.jpg,.jpeg,.png" required>
+          <small class="error" id="idProof-error"></small>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Account security</legend>
+
+        <div class="field">
+          <label for="password">Password *</label>
+          <input type="password" id="password" name="password" placeholder="At least 8 characters" minlength="8" maxlength="64" autocomplete="new-password" required>
+          <div class="meter"><span id="meter-bar"></span></div>
+          <small id="strength-text" class="strength">Strength: not entered</small>
+          <small class="error" id="password-error"></small>
+        </div>
+
+        <div class="field">
+          <label for="confirmPassword">Confirm password *</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" maxlength="64" autocomplete="new-password" required>
+          <small class="error" id="confirmPassword-error"></small>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label class="inline"><input type="checkbox" id="terms" name="terms" required> I confirm the details above are correct and agree to the terms *</label>
+        <small class="error" id="terms-error"></small>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Register</button>
+        <button type="reset" class="secondary" id="reset-button">Clear form</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
